@@ -25,10 +25,10 @@ public class rotateRoot : MonoBehaviour
         {
             (rootRotation.z, rootRotation.w) = (rootRotation.w, rootRotation.z);
         }
-        Debug.Log(rootRotation + "Before CHange");
+        //Debug.Log(rootRotation + "Before CHange");
         rootRotation.z = Mathf.Abs(rootRotation.z);
         rootRotation.w = Mathf.Abs(rootRotation.w);
-        Debug.Log(rootRotation + "After Change");
+        //Debug.Log(rootRotation + "After Change");
         if(rootRotation.z !>= 0 )
         {
             //Debug.Log("true");

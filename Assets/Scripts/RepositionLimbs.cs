@@ -5,6 +5,7 @@ public class RepositionLegs : MonoBehaviour
     public Transform limbSolverTarget;
     public float repositionDistance;
     public LayerMask ground;
+    public float rayLength;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,8 +26,8 @@ public class RepositionLegs : MonoBehaviour
 
     public void CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y+2) , Vector3.down, 8, ground);
-
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y+2) , Vector3.down, rayLength, ground);
+        Debug.DrawLine(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2), new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2-rayLength));
         if(hit.collider != null)
         {
             Vector3 point = hit.point;
