@@ -15,7 +15,7 @@ public class StandAboveGround : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Debug.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y - distanceFromGround), Color.red);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, distanceFromGround, ground);
